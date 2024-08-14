@@ -31,41 +31,16 @@
 
 package com.icst.android.appstudio;
 
-import com.icst.android.appstudio.extensions.activityextension.ActivityExtension;
-import com.icst.android.appstudio.extensions.basicvariables.BasicVariablesExtensions;
-import com.icst.android.appstudio.extensions.controlextension.ControlExtension;
-import com.icst.android.appstudio.extensions.controlextension.OperatorExtension;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 
 public class ExtensionGenerator {
   public static void generateFiles(File output) throws Exception {
-    /* MAKE YOUR EXTENSION FILE IN ANOTHER CLASS ABD SERIALIZE IT
+    /* MAKE YOUR EXTENSION FILE IN ANOTHER CLASS AND SERIALIZE IT
      * For Example:
      * serialize(YOUR_EXTENSION_OBJECT, new File(output, "FileName.fileExtension"), "TaskName");
      */
-    output = new File("/storage/emulated/0/.AndroidAppBuilder/Extension");
-
-    serialize(
-        ControlExtension.getExtensionBundle(),
-        new File(output, "ControlBlocks.extaas"),
-        "generateControlBlocks");
-
-    serialize(
-        OperatorExtension.getExtensionBundle(),
-        new File(output, "OperatorBlocks.extaas"),
-        "generateOperatorBlocks");
-
-    serialize(
-        ActivityExtension.getExtensionBundle(),
-        new File(output, "ActivityEvents.extaas"),
-        "generateActivityEvents");
-
-    serialize(
-        BasicVariablesExtensions.getExtensionBundle(),
-        new File(output, "BasicVariable.extaas"),
-        "generateBasicVariable");
   }
 
   // DO NOT MODIFY THIS METHOD
